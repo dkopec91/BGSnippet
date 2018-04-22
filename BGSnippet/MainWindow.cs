@@ -2,7 +2,6 @@
 using System.Threading;
 using System.IO;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 
 //TODO: Sometimes event is raised multiple times on single file change
 //FileSystemWatcher bug/feature - multiple file system actions during the 
@@ -18,7 +17,7 @@ namespace BGSnippet
         public MainWindow()
         {
             InitializeComponent();
-            ConfigManager.DeserializeSettings();
+            ConfigManager.LoadSettings();
             SetFormFieldsFromConfig();
 
             //Start file watch
@@ -33,7 +32,7 @@ namespace BGSnippet
 
             notifyIcon1.Visible = true;
             notifyIcon1.ShowBalloonTip(500);
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;            
         }
 
         private void SetFormFieldsFromConfig()
@@ -112,14 +111,14 @@ namespace BGSnippet
         private void BtnSave_Click(object sender, EventArgs e)
         {
             SetConfigFromFormFields();
-            ConfigManager.SerializeSettings();
+            ConfigManager.SaveSettings();
         }
 
         private void BtnAbout_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                    "BGSnippet v.0.0.1\ndkopec91@gmail.com\n\nFirst draft. Needs a lot of further changes." +
-                    "\nFeel free to contact me if have any sugestions.\nOr just let me know if it's usefull :-)",
+                    "BGSnippet v.0.0.1\ndkopec91@gmail.com\n" +
+                    "\nFeel free to contact me if you have any sugestions.",
                     "About",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);

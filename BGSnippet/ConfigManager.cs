@@ -1,78 +1,72 @@
 ﻿using System;
-using System.IO;
-using System.Xml.Serialization;
+using BGSnippet.Properties;
 
 namespace BGSnippet
 {
     static class ConfigManager
     {
-        static public void SerializeSettings()
+        static public void SaveSettings()
         {
-            XmlSerializer SettingsSerializer = new XmlSerializer(typeof(SerializableConfig));
-            SerializableConfig CurrentAppConfig = new SerializableConfig
-            {
-                SourceFilePath = Config.SourceFilePath,
-                SourceFileName = Config.SourceFileName,
-                TargetFileName = Config.TargetFileName,
-                TargetFilePath = Config.TargetFilePath,
-                SnippetHeight = Config.SnippetHeight,
-                SnippetWitdth = Config.SnippetWitdth,
-                SnippetLeft = Config.SnippetLeft,
-                SnippetTop = Config.SnippetTop,
-                Delay = Config.Delay
-            };
+            Settings.Default.SourceFilePath = Config.SourceFilePath;
+            Settings.Default.SourceFileName = Config.SourceFileName;
+            Settings.Default.TargetFilePath = Config.TargetFilePath;
+            Settings.Default.TargetFileName = Config.TargetFileName;
+            Settings.Default.SnippetWitdth = Config.SnippetWitdth;
+            Settings.Default.SnippetHeight = Config.SnippetHeight;
+            Settings.Default.SnippetLeft = Config.SnippetLeft;
+            Settings.Default.SnippetTop = Config.SnippetTop;
+            Settings.Default.Delay = Config.Delay;
+            Settings.Default.Save();
+        }
 
-            using (FileStream fs = new FileStream(AppContext.BaseDirectory + "\\config.xml", FileMode.Create))
+        static public void LoadSettings()
+        {
+            if (Settings.Default.SourceFilePath == string.Empty)
             {
-                SettingsSerializer.Serialize(fs, CurrentAppConfig);
+                SetDefaults();
+            }
+            else
+            {
+                LoadUserSettings();
             }
         }
 
-        static public void DeserializeSettings()
+        public static void LoadUserSettings()
         {
-            XmlSerializer SettingsSerializer = new XmlSerializer(typeof(SerializableConfig));
-            SerializableConfig CurrentAppConfig = new SerializableConfig();
-            try
-            {
-                using (FileStream fs = new FileStream(AppContext.BaseDirectory + "\\config.xml", FileMode.Open))
-                {
-                    CurrentAppConfig = (SerializableConfig)SettingsSerializer.Deserialize(fs);
-                }
-                Config.SourceFilePath = CurrentAppConfig.SourceFilePath;
-                Config.SourceFileName = CurrentAppConfig.SourceFileName;
-                Config.TargetFileName = CurrentAppConfig.TargetFileName;
-                Config.TargetFilePath = CurrentAppConfig.TargetFilePath;
-                Config.SnippetHeight = CurrentAppConfig.SnippetHeight;
-                Config.SnippetWitdth = CurrentAppConfig.SnippetWitdth;
-                Config.SnippetLeft = CurrentAppConfig.SnippetLeft;
-                Config.SnippetTop = CurrentAppConfig.SnippetTop;
-                Config.Delay = CurrentAppConfig.Delay;
-            }
+            Config.SourceFilePath = Settings.Default.SourceFilePath;
+            Config.SourceFileName = Settings.Default.SourceFileName;
+            Config.TargetFilePath = Settings.Default.TargetFilePath;
+            Config.TargetFileName = Settings.Default.TargetFileName;
+            Config.SnippetWitdth = Settings.Default.SnippetWitdth;
+            Config.SnippetHeight = Settings.Default.SnippetHeight;
+            Config.SnippetLeft = Settings.Default.SnippetLeft;
+            Config.SnippetTop = Settings.Default.SnippetTop;
+            Config.Delay = Settings.Default.Delay;
+        }
 
-            catch (Exception ex)
-            {
-                Config.SourceFilePath = String.Format(@"C:\Users\{0}\AppData\Roaming\Microsoft\Windows\Themes", Environment.UserName);
-                Config.SourceFileName = "TranscodedWallpaper";
-                Config.TargetFilePath = "C:\\Aida";
-                Config.TargetFileName = "bg.png";
-                Config.SnippetWitdth = 500;
-                Config.SnippetHeight = 600;
-                Config.SnippetLeft = 0;
-                Config.SnippetTop = 0;
-                Config.Delay = 300;
-            }
+        public static void SetDefaults()
+        {
+            Config.SourceFilePath = String.Format(@"C:\Users\{0}\AppData\Roaming\Microsoft\Windows\Themes", Environment.UserName);
+            Config.SourceFileName = "TranscodedWallpaper";
+            Config.TargetFilePath = "C:\\Aida";
+            Config.TargetFileName = "bg.png";
+            Config.SnippetWitdth = 500;
+            Config.SnippetHeight = 600;
+            Config.SnippetLeft = 0;
+            Config.SnippetTop = 0;
+            Config.Delay = 300;
         }
 
         public static string GetFileNameFromFullPath(string FullPath)
         {
             string[] split = FullPath.Split('\\');
-            return split[split.Length-1];
+            return split[split.Length - 1];
         }
 
         public static string GetFilePathFromFullPath(string FullPath)
         {
             string[] split = FullPath.Split('\\');
-            return FullPath.Substring(0,FullPath.Length - split[split.Length - 1].Length -1);
+            return FullPath.Substring(0, FullPath.Length - split[split.Length - 1].Length - 1);
         }
     }
 

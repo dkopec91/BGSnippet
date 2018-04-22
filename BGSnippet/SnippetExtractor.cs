@@ -36,7 +36,7 @@ namespace BGSnippet
             {
                 pobjSnippet.Save(Config.TargetFilePath + "\\" + Config.TargetFileName);
             }
-            catch (Exception ex) { };
+            catch (Exception) { };
         }
 
     }
