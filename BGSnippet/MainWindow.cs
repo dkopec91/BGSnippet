@@ -29,6 +29,8 @@ namespace BGSnippet
             };
             FileWatcher.Changed += new FileSystemEventHandler(OnChanged);
             FileWatcher.EnableRaisingEvents = true;
+            OnChanged(FileWatcher, null);
+            
 
             notifyIcon1.Visible = true;
             notifyIcon1.ShowBalloonTip(500);
@@ -117,7 +119,7 @@ namespace BGSnippet
         private void BtnAbout_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                    "BGSnippet v.0.0.1\ndkopec91@gmail.com\n" +
+                    "BGSnippet v.0.2\ndkopec91@gmail.com\n" +
                     "\nFeel free to contact me if you have any sugestions.",
                     "About",
                     MessageBoxButtons.OK,
