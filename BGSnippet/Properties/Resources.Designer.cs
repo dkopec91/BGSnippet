@@ -19,7 +19,7 @@ namespace BGSnippet.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -57,6 +57,46 @@ namespace BGSnippet.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BGSnippet will no longer be started at Windows startup from the following path:
+        ///
+        ///{0}.
+        /// </summary>
+        internal static string AutostartOffMessage {
+            get {
+                return ResourceManager.GetString("AutostartOffMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autostart disabled.
+        /// </summary>
+        internal static string AutostartOffTitle {
+            get {
+                return ResourceManager.GetString("AutostartOffTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BGSnippet will be started at Windows startup from the following path:
+        ///
+        ///{0}.
+        /// </summary>
+        internal static string AutostartOnMessage {
+            get {
+                return ResourceManager.GetString("AutostartOnMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Autostart enabled.
+        /// </summary>
+        internal static string AutostartOnTitle {
+            get {
+                return ResourceManager.GetString("AutostartOnTitle", resourceCulture);
             }
         }
     }

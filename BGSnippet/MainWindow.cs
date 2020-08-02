@@ -44,6 +44,7 @@ namespace BGSnippet
 
         private void SetFormFieldsFromConfig()
         {
+            cbxAutostart.CheckState = Config.Autostart ? CheckState.Checked : CheckState.Unchecked;
             txtboxSourceFile.Text = Config.SourceFilePath + "\\" + Config.SourceFileName;
             txtboxOutputFile.Text = Config.TargetFilePath + "\\" + Config.TargetFileName;
             txtboxWidth.Text = Config.SnippetWitdth.ToString();
@@ -143,6 +144,11 @@ namespace BGSnippet
                 notifyIcon.Visible = true;
                 ShowInTaskbar = false;
             }
+        }
+
+        private void CbxAutostart_Click(object sender, EventArgs e)
+        {
+            ConfigManager.SetRunOnSystemStartup(((CheckBox)sender).Checked);
         }
     }
 }

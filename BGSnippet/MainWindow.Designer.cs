@@ -35,6 +35,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
+            this.cbxAutostart = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtboxSourceFile = new System.Windows.Forms.TextBox();
@@ -82,12 +83,14 @@
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnApply, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAbout, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cbxAutostart, 0, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 19);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(114, 130);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
@@ -96,9 +99,9 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(3, 46);
+            this.btnSave.Location = new System.Drawing.Point(3, 35);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(108, 37);
+            this.btnSave.Size = new System.Drawing.Size(108, 26);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -111,7 +114,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnApply.Location = new System.Drawing.Point(3, 3);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(108, 37);
+            this.btnApply.Size = new System.Drawing.Size(108, 26);
             this.btnApply.TabIndex = 7;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
@@ -122,13 +125,28 @@
             this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAbout.Location = new System.Drawing.Point(3, 89);
+            this.btnAbout.Location = new System.Drawing.Point(3, 67);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(108, 38);
+            this.btnAbout.Size = new System.Drawing.Size(108, 26);
             this.btnAbout.TabIndex = 9;
             this.btnAbout.Text = "About";
             this.btnAbout.UseVisualStyleBackColor = true;
             this.btnAbout.Click += new System.EventHandler(this.BtnAbout_Click);
+            // 
+            // cbxAutostart
+            // 
+            this.cbxAutostart.AccessibleDescription = "";
+            this.cbxAutostart.Appearance = System.Windows.Forms.Appearance.Button;
+            this.cbxAutostart.AutoSize = true;
+            this.cbxAutostart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbxAutostart.Location = new System.Drawing.Point(3, 99);
+            this.cbxAutostart.Name = "cbxAutostart";
+            this.cbxAutostart.Size = new System.Drawing.Size(108, 28);
+            this.cbxAutostart.TabIndex = 10;
+            this.cbxAutostart.Text = "Autostart";
+            this.cbxAutostart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cbxAutostart.UseVisualStyleBackColor = true;
+            this.cbxAutostart.Click += new System.EventHandler(this.CbxAutostart_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -365,6 +383,7 @@
             this.Resize += new System.EventHandler(this.MainWindow_Resize);
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -401,6 +420,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox cbxAutostart;
     }
 }
 

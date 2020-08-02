@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Windows.Forms;
 using BGSnippet.Properties;
+using Microsoft.Win32;
 
 namespace BGSnippet
 {
     static class ConfigManager
     {
+        private static string BGSnippet = "BGSnippet";
+        private static RegistryKey appKey;
+
         static public void SaveSettings()
         {
             Settings.Default.SourceFilePath = Config.SourceFilePath;
@@ -21,6 +26,9 @@ namespace BGSnippet
 
         static public void LoadSettings()
         {
+            appKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            Config.Autostart = RunsOnSystemStartup;
+
             if (Settings.Default.SourceFilePath == string.Empty)
             {
                 SetDefaults();
@@ -67,6 +75,34 @@ namespace BGSnippet
         {
             string[] split = FullPath.Split('\\');
             return FullPath.Substring(0, FullPath.Length - split[split.Length - 1].Length - 1);
+        }
+
+        public static bool RunsOnSystemStartup => appKey.GetValue(BGSnippet) != null;
+
+        public static void SetRunOnSystemStartup(bool runOnSystemStartup)
+        {
+            var currentRegistryKeyValue = appKey.GetValue(BGSnippet)?.ToString();
+            var currentExecutablePath = Application.ExecutablePath;
+
+            if (runOnSystemStartup)
+            {
+                appKey.SetValue(BGSnippet, currentExecutablePath);
+                MessageBox.Show(
+                    string.Format(Resources.AutostartOnMessage, currentExecutablePath),
+                    Resources.AutostartOnTitle,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+            else if (RunsOnSystemStartup)
+            {
+                appKey.DeleteValue(BGSnippet);
+                MessageBox.Show(
+                    string.Format(Resources.AutostartOffMessage, currentRegistryKeyValue),
+                    Resources.AutostartOffTitle,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
     }
 

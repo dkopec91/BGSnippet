@@ -2,6 +2,7 @@
 {
     public static class Config
     {
+        public static bool Autostart { get; set; }
         public static string SourceFilePath { get; set; }
         public static string SourceFileName { get; set; }
         public static string TargetFilePath { get; set; }
