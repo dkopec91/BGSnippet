@@ -1,8 +1,8 @@
 # ![AppIcon](ReadmeResources/icon.ico) BGSnippet
 **Technology:** Windows Forms
 
-**Description:** AIDA64 workaround for lack of transparent sensor panel background.
-Solves the problem described [here](https://forums.aida64.com/topic/1946-sensorpanel-transparent-background/?tab=comments#comment-18738), by triggering upon change of Windows desktop background image, and saving appropriate piece of wallpaper to a specified file. 
+**Description:** Workaround for AIDA64's lack of transparent sensor panel background.
+Solves the problem described [here](https://forums.aida64.com/topic/1946-sensorpanel-transparent-background/?tab=comments#comment-18738), by getting triggered upon the change of Windows desktop background image, and extracting appropriate piece of current desktop wallpaper to a user specified file. 
 
 **Screens:**
 
