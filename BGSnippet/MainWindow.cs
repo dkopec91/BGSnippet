@@ -33,12 +33,13 @@ namespace BGSnippet
             FileWatcher.EnableRaisingEvents = true;
             OnChanged(FileWatcher, null);
             
-            notifyIcon1.BalloonTipTitle = appNameAndVersion;
-            notifyIcon1.Visible = true;
-            notifyIcon1.ShowBalloonTip(500);
+            notifyIcon.BalloonTipTitle = appNameAndVersion;
+            notifyIcon.Visible = true;
+            notifyIcon.ShowBalloonTip(500);
 
             this.Text = appNameAndVersion;
             this.WindowState = FormWindowState.Minimized;
+            Hide();
         }
 
         private void SetFormFieldsFromConfig()
@@ -104,9 +105,12 @@ namespace BGSnippet
             System.GC.WaitForPendingFinalizers();
         }
 
-        private void NotifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            this.Show();
             this.WindowState = FormWindowState.Normal;
+            notifyIcon.Visible = false;
+            ShowInTaskbar = true;
         }
 
         private void BtnApply_Click(object sender, EventArgs e)
@@ -129,6 +133,16 @@ namespace BGSnippet
                     MessageBoxIcon.Information,
                     MessageBoxDefaultButton.Button2,
                     0, "https://github.com/dkopec91/BGSnippet");
+        }
+
+        private void MainWindow_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+                notifyIcon.Visible = true;
+                ShowInTaskbar = false;
+            }
         }
     }
 }
