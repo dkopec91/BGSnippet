@@ -361,7 +361,7 @@
             this.MinimumSize = new System.Drawing.Size(300, 310);
             this.Name = "MainWindow";
             this.ShowInTaskbar = false;
-            this.Text = "BGSnippet 0.2";
+            this.Text = "BGSnippet";
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);

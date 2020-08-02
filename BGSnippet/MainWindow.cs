@@ -14,6 +14,8 @@ namespace BGSnippet
     public partial class MainWindow : Form
     {
         public static object locker = new object();
+        public string appNameAndVersion = $"BGSnippet {typeof(MainWindow).Assembly.GetName().Version}";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,10 +33,12 @@ namespace BGSnippet
             FileWatcher.EnableRaisingEvents = true;
             OnChanged(FileWatcher, null);
             
-
+            notifyIcon1.BalloonTipTitle = appNameAndVersion;
             notifyIcon1.Visible = true;
             notifyIcon1.ShowBalloonTip(500);
-            this.WindowState = FormWindowState.Minimized;            
+
+            this.Text = appNameAndVersion;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void SetFormFieldsFromConfig()
@@ -119,11 +123,12 @@ namespace BGSnippet
         private void BtnAbout_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                    "BGSnippet v.0.2\ndkopec91@gmail.com\n" +
-                    "\nFeel free to contact me if you have any sugestions.",
-                    "About",
+                    "Project webpage:\n  https://github.com/dkopec91/BGSnippet",
+                    appNameAndVersion,
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button2,
+                    0, "https://github.com/dkopec91/BGSnippet");
         }
     }
 }
