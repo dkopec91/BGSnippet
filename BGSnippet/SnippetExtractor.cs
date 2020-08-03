@@ -17,7 +17,7 @@ namespace BGSnippet
         {
             Bitmap SourceBitmap = new Bitmap(Config.SnippetWitdth, Config.SnippetHeight);
 
-            using (Stream BitmapStream = System.IO.File.Open(Config.SourceFilePath + "\\" + Config.SourceFileName, FileMode.Open))
+            using (Stream BitmapStream = System.IO.File.Open(Config.SourceFilePath, FileMode.Open))
             {
                 Image SourceImage = Image.FromStream(BitmapStream);
                 SourceBitmap = new Bitmap(SourceImage);
@@ -34,7 +34,7 @@ namespace BGSnippet
         {
             try
             {
-                pobjSnippet.Save(Config.TargetFilePath + "\\" + Config.TargetFileName);
+                pobjSnippet.Save(Config.TargetFilePath);
             }
             catch (Exception) { };
         }

@@ -25,8 +25,8 @@ namespace BGSnippet
             //Start file watch
             FileSystemWatcher FileWatcher = new FileSystemWatcher()
             {
-                Path = Config.SourceFilePath,
-                Filter = Config.SourceFileName,
+                Path = Path.GetDirectoryName(Config.SourceFilePath),
+                Filter = Path.GetFileName(Config.SourceFilePath),
                 NotifyFilter = NotifyFilters.LastWrite
             };
             FileWatcher.Changed += new FileSystemEventHandler(OnChanged);
@@ -45,8 +45,8 @@ namespace BGSnippet
         private void SetFormFieldsFromConfig()
         {
             cbxAutostart.CheckState = Config.Autostart ? CheckState.Checked : CheckState.Unchecked;
-            txtboxSourceFile.Text = Config.SourceFilePath + "\\" + Config.SourceFileName;
-            txtboxOutputFile.Text = Config.TargetFilePath + "\\" + Config.TargetFileName;
+            txtboxSourceFile.Text = Config.SourceFilePath;
+            txtboxOutputFile.Text = Config.TargetFilePath;
             txtboxWidth.Text = Config.SnippetWitdth.ToString();
             txtboxHeight.Text = Config.SnippetHeight.ToString();
             txtboxLeft.Text = Config.SnippetLeft.ToString();
@@ -56,10 +56,8 @@ namespace BGSnippet
 
         private void SetConfigFromFormFields()
         {
-            Config.SourceFilePath = ConfigManager.GetFilePathFromFullPath(txtboxSourceFile.Text);
-            Config.SourceFileName = ConfigManager.GetFileNameFromFullPath(txtboxSourceFile.Text);
-            Config.TargetFilePath = ConfigManager.GetFilePathFromFullPath(txtboxOutputFile.Text);
-            Config.TargetFileName = ConfigManager.GetFileNameFromFullPath(txtboxOutputFile.Text);
+            Config.SourceFilePath = txtboxSourceFile.Text;
+            Config.TargetFilePath = txtboxOutputFile.Text;
             Config.SnippetWitdth = int.Parse(txtboxWidth.Text);
             Config.SnippetHeight = int.Parse(txtboxHeight.Text);
             Config.SnippetLeft = int.Parse(txtboxLeft.Text);
