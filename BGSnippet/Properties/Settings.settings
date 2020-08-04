@@ -9,10 +9,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SnippetWitdth" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="SnippetHeight" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="SnippetLeft" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>

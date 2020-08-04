@@ -13,26 +13,17 @@ namespace BGSnippet
 {
     public partial class MainWindow : Form
     {
-        public static object locker = new object();
-        public string appNameAndVersion = $"BGSnippet {typeof(MainWindow).Assembly.GetName().Version}";
+        private static object locker = new object();
+        private static FileSystemWatcher FileWatcher;
+        private string appNameAndVersion = $"BGSnippet {typeof(MainWindow).Assembly.GetName().Version}";
 
         public MainWindow()
         {
             InitializeComponent();
             ConfigManager.LoadSettings();
             SetFormFieldsFromConfig();
+            RunFileWatcher();
 
-            //Start file watch
-            FileSystemWatcher FileWatcher = new FileSystemWatcher()
-            {
-                Path = Path.GetDirectoryName(Config.SourceFilePath),
-                Filter = Path.GetFileName(Config.SourceFilePath),
-                NotifyFilter = NotifyFilters.LastWrite
-            };
-            FileWatcher.Changed += new FileSystemEventHandler(OnChanged);
-            FileWatcher.EnableRaisingEvents = true;
-            OnChanged(FileWatcher, null);
-            
             notifyIcon.BalloonTipTitle = appNameAndVersion;
             notifyIcon.Visible = true;
             notifyIcon.ShowBalloonTip(500);
@@ -78,6 +69,14 @@ namespace BGSnippet
                     new SnippetExtractor();
                 }
             }
+            catch (System.IO.FileNotFoundException)
+            {
+                MessageBox.Show(
+                    "Failed to load the file. Check the file path.",
+                    "IOException occured",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
             catch (System.IO.IOException)
             {
                 MessageBox.Show(
@@ -104,6 +103,33 @@ namespace BGSnippet
             System.GC.WaitForPendingFinalizers();
         }
 
+        private void RunFileWatcher()
+        {
+            if (FileWatcher != null)
+                FileWatcher.Dispose();
+
+            try
+            {
+                FileWatcher = new FileSystemWatcher()
+                {
+                    Path = Path.GetDirectoryName(Config.SourceFilePath),
+                    Filter = Path.GetFileName(Config.SourceFilePath),
+                    NotifyFilter = NotifyFilters.LastWrite
+                };
+                FileWatcher.Changed += new FileSystemEventHandler(OnChanged);
+                FileWatcher.EnableRaisingEvents = true;
+                OnChanged(FileWatcher, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "File watcher failed to start. Please verify input file path.",
+                    "Exception occured",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
         private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
@@ -115,12 +141,14 @@ namespace BGSnippet
         private void BtnApply_Click(object sender, EventArgs e)
         {
             SetConfigFromFormFields();
+            RunFileWatcher();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             SetConfigFromFormFields();
             ConfigManager.SaveSettings();
+            RunFileWatcher();
         }
 
         private void BtnAbout_Click(object sender, EventArgs e)

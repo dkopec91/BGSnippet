@@ -34,6 +34,11 @@ namespace BGSnippet
             Config.SnippetLeft = Settings.Default.SnippetLeft;
             Config.SnippetTop = Settings.Default.SnippetTop;
             Config.Delay = Settings.Default.Delay;
+
+            if (string.IsNullOrEmpty(Config.SourceFilePath))
+            {
+                Config.SourceFilePath = $@"C:\Users\{Environment.UserName}\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper";
+            }
         }
 
         public static bool RunsOnSystemStartup => appKey.GetValue(BGSnippet) != null;

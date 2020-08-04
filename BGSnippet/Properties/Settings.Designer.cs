@@ -49,7 +49,7 @@ namespace BGSnippet.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public int SnippetWitdth {
             get {
                 return ((int)(this["SnippetWitdth"]));
@@ -61,7 +61,7 @@ namespace BGSnippet.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public int SnippetHeight {
             get {
                 return ((int)(this["SnippetHeight"]));
