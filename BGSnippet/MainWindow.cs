@@ -30,7 +30,6 @@ namespace BGSnippet
 
             this.Text = appNameAndVersion;
             this.WindowState = FormWindowState.Minimized;
-            Hide();
         }
 
         private void SetFormFieldsFromConfig()
@@ -166,15 +165,20 @@ namespace BGSnippet
         {
             if (this.WindowState == FormWindowState.Minimized)
             {
-                this.Hide();
                 notifyIcon.Visible = true;
                 ShowInTaskbar = false;
+                this.Hide();
             }
         }
 
         private void CbxAutostart_Click(object sender, EventArgs e)
         {
             ConfigManager.SetRunOnSystemStartup(((CheckBox)sender).Checked);
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
