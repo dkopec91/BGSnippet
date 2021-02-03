@@ -133,4 +133,13 @@
   <data name="AutostartOnTitle" xml:space="preserve">
     <value>Autostart enabled</value>
   </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Resume</value>
+  </data>
 </root>

@@ -2,6 +2,7 @@
 using System.Threading;
 using System.IO;
 using System.Windows.Forms;
+using BGSnippet.Properties;
 
 //TODO: Sometimes event is raised multiple times on single file change
 //FileSystemWatcher bug/feature - multiple file system actions during the 
@@ -118,6 +119,8 @@ namespace BGSnippet
                 FileWatcher.Changed += new FileSystemEventHandler(OnChanged);
                 FileWatcher.EnableRaisingEvents = true;
                 OnChanged(FileWatcher, null);
+                FileWatcher.Disposed += FileWatcher_Disposed;
+                pauseOrResume_MenuItem.Text = Resources.Pause;
             }
             catch (Exception ex)
             {
@@ -127,6 +130,11 @@ namespace BGSnippet
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void FileWatcher_Disposed(object sender, EventArgs e)
+        {
+            pauseOrResume_MenuItem.Text = Resources.Resume;
         }
 
         private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -174,6 +182,25 @@ namespace BGSnippet
         private void CbxAutostart_Click(object sender, EventArgs e)
         {
             ConfigManager.SetRunOnSystemStartup(((CheckBox)sender).Checked);
+        }
+
+        private void exit_MenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pauseOrResume_MenuItem_Click(object sender, EventArgs e)
+        {
+            var isFileWatcherRaisingEvents = FileWatcher != null && FileWatcher.EnableRaisingEvents;
+
+            if (isFileWatcherRaisingEvents)
+            {
+                FileWatcher.Dispose();
+            }
+            else
+            {
+                RunFileWatcher();
+            }
         }
 
         private void MainWindow_Load(object sender, EventArgs e)

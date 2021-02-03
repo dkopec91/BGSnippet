@@ -54,6 +54,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.systemTrayMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pauseOrResume_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exit_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -61,6 +64,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.systemTrayMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -360,10 +364,34 @@
             this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.notifyIcon.BalloonTipText = "Runing in background";
             this.notifyIcon.BalloonTipTitle = "BGSnippet";
+            this.notifyIcon.ContextMenuStrip = this.systemTrayMenuStrip;
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "BGSnippet";
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseDoubleClick);
+            // 
+            // systemTrayMenuStrip
+            // 
+            this.systemTrayMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pauseOrResume_MenuItem,
+            this.exit_MenuItem});
+            this.systemTrayMenuStrip.Name = "systemTrayMenuStrip";
+            this.systemTrayMenuStrip.ShowImageMargin = false;
+            this.systemTrayMenuStrip.Size = new System.Drawing.Size(128, 48);
+            // 
+            // pauseOrResume_MenuItem
+            // 
+            this.pauseOrResume_MenuItem.Name = "pauseOrResume_MenuItem";
+            this.pauseOrResume_MenuItem.Size = new System.Drawing.Size(127, 22);
+            this.pauseOrResume_MenuItem.Text = "Pause/Resume";
+            this.pauseOrResume_MenuItem.Click += new System.EventHandler(this.pauseOrResume_MenuItem_Click);
+            // 
+            // exit_MenuItem
+            // 
+            this.exit_MenuItem.Name = "exit_MenuItem";
+            this.exit_MenuItem.Size = new System.Drawing.Size(127, 22);
+            this.exit_MenuItem.Text = "Exit";
+            this.exit_MenuItem.Click += new System.EventHandler(this.exit_MenuItem_Click);
             // 
             // MainWindow
             // 
@@ -393,6 +421,7 @@
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.systemTrayMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -422,6 +451,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbxAutostart;
+        private System.Windows.Forms.ContextMenuStrip systemTrayMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem pauseOrResume_MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exit_MenuItem;
     }
 }
 
