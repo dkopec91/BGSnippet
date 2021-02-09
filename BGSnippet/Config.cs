@@ -10,5 +10,7 @@
         public static int SnippetLeft { get; set; }
         public static int SnippetTop { get; set; }
         public static int Delay { get; set; }
+        public static System.Windows.Forms.AnchorStyles ReferencePointLocationX { get; set; }
+        public static System.Windows.Forms.AnchorStyles ReferencePointLocationY { get; set; }
     }
 }

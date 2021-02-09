@@ -12,7 +12,7 @@ namespace BGSnippet.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -104,6 +104,30 @@ namespace BGSnippet.Properties {
             }
             set {
                 this["Delay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Left")]
+        public global::System.Windows.Forms.AnchorStyles ReferencePointLocationX {
+            get {
+                return ((global::System.Windows.Forms.AnchorStyles)(this["ReferencePointLocationX"]));
+            }
+            set {
+                this["ReferencePointLocationX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Top")]
+        public global::System.Windows.Forms.AnchorStyles ReferencePointLocationY {
+            get {
+                return ((global::System.Windows.Forms.AnchorStyles)(this["ReferencePointLocationY"]));
+            }
+            set {
+                this["ReferencePointLocationY"] = value;
             }
         }
     }

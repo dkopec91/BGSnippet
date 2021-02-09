@@ -12,6 +12,8 @@ namespace BGSnippet
 
         static public void SaveSettings()
         {
+            Settings.Default.ReferencePointLocationX = Config.ReferencePointLocationX;
+            Settings.Default.ReferencePointLocationY = Config.ReferencePointLocationY;
             Settings.Default.SourceFilePath = Config.SourceFilePath;
             Settings.Default.TargetFilePath = Config.TargetFilePath;
             Settings.Default.SnippetWitdth = Config.SnippetWitdth;
@@ -27,6 +29,8 @@ namespace BGSnippet
             appKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             Config.Autostart = RunsOnSystemStartup;
 
+            Config.ReferencePointLocationX = Settings.Default.ReferencePointLocationX;
+            Config.ReferencePointLocationY = Settings.Default.ReferencePointLocationY;
             Config.SourceFilePath = Settings.Default.SourceFilePath;
             Config.TargetFilePath = Settings.Default.TargetFilePath;
             Config.SnippetWitdth = Settings.Default.SnippetWitdth;

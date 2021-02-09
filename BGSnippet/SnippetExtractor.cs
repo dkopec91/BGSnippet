@@ -27,7 +27,17 @@ namespace BGSnippet
 
         private Bitmap ExtractSnippet(ref Bitmap SourceBitmap)
         {
-            return new Bitmap(SourceBitmap.Clone(new Rectangle(Config.SnippetLeft, Config.SnippetTop, Config.SnippetWitdth, Config.SnippetHeight), SourceBitmap.PixelFormat));
+            var left = Config.ReferencePointLocationX == System.Windows.Forms.AnchorStyles.Left
+                ? Config.SnippetLeft
+                : SourceBitmap.Width - Math.Abs(Config.SnippetLeft);
+
+            var top = Config.ReferencePointLocationY == System.Windows.Forms.AnchorStyles.Top
+                ? Config.SnippetTop
+                : SourceBitmap.Height - Math.Abs(Config.SnippetTop);
+
+            return new Bitmap(SourceBitmap.Clone(
+                new Rectangle(left, top, Config.SnippetWitdth, Config.SnippetHeight), 
+                SourceBitmap.PixelFormat));
         }
 
         private void SaveSnippet(ref Bitmap pobjSnippet)

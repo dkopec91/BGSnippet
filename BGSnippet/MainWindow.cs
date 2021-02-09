@@ -36,6 +36,8 @@ namespace BGSnippet
         private void SetFormFieldsFromConfig()
         {
             cbxAutostart.CheckState = Config.Autostart ? CheckState.Checked : CheckState.Unchecked;
+            referencePointSelector.ReferencePointLocationX = Config.ReferencePointLocationX;
+            referencePointSelector.ReferencePointLocationY = Config.ReferencePointLocationY;
             txtboxSourceFile.Text = Config.SourceFilePath;
             txtboxOutputFile.Text = Config.TargetFilePath;
             txtboxWidth.Text = Config.SnippetWitdth.ToString();
@@ -47,6 +49,8 @@ namespace BGSnippet
 
         private void SetConfigFromFormFields()
         {
+            Config.ReferencePointLocationX = referencePointSelector.ReferencePointLocationX;
+            Config.ReferencePointLocationY = referencePointSelector.ReferencePointLocationY;
             Config.SourceFilePath = txtboxSourceFile.Text;
             Config.TargetFilePath = txtboxOutputFile.Text;
             Config.SnippetWitdth = int.Parse(txtboxWidth.Text);

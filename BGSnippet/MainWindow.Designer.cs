@@ -30,82 +30,84 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBoxControlButtons = new System.Windows.Forms.GroupBox();
+            this.tableLayoutControlButtons = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.cbxAutostart = new System.Windows.Forms.CheckBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mainLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBoxInputFile = new System.Windows.Forms.GroupBox();
             this.txtboxSourceFile = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBoxOutputFile = new System.Windows.Forms.GroupBox();
             this.txtboxOutputFile = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtboxLeft = new System.Windows.Forms.TextBox();
-            this.txtboxTop = new System.Windows.Forms.TextBox();
-            this.txtboxWidth = new System.Windows.Forms.TextBox();
+            this.groupBoxSnippetParameters = new System.Windows.Forms.GroupBox();
+            this.tableLayoutSnippetParameters = new System.Windows.Forms.TableLayoutPanel();
             this.txtboxDelay = new System.Windows.Forms.TextBox();
+            this.lblDelay = new System.Windows.Forms.Label();
             this.txtboxHeight = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblHeight = new System.Windows.Forms.Label();
+            this.lblWidth = new System.Windows.Forms.Label();
+            this.txtboxWidth = new System.Windows.Forms.TextBox();
+            this.txtboxTop = new System.Windows.Forms.TextBox();
+            this.lblSnippetY = new System.Windows.Forms.Label();
+            this.lblSnippetX = new System.Windows.Forms.Label();
+            this.txtboxLeft = new System.Windows.Forms.TextBox();
+            this.lblReferencePoint = new System.Windows.Forms.Label();
+            this.referencePointSelector = new BGSnippet.ReferencePointSelector();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.systemTrayMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pauseOrResume_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exit_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBoxControlButtons.SuspendLayout();
+            this.tableLayoutControlButtons.SuspendLayout();
+            this.mainLayoutPanel.SuspendLayout();
+            this.groupBoxInputFile.SuspendLayout();
+            this.groupBoxOutputFile.SuspendLayout();
+            this.groupBoxSnippetParameters.SuspendLayout();
+            this.tableLayoutSnippetParameters.SuspendLayout();
             this.systemTrayMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // groupBoxControlButtons
             // 
-            this.groupBox2.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox2.Location = new System.Drawing.Point(8, 109);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(124, 155);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Control";
+            this.groupBoxControlButtons.Controls.Add(this.tableLayoutControlButtons);
+            this.groupBoxControlButtons.Location = new System.Drawing.Point(8, 109);
+            this.groupBoxControlButtons.Name = "groupBoxControlButtons";
+            this.groupBoxControlButtons.Size = new System.Drawing.Size(100, 182);
+            this.groupBoxControlButtons.TabIndex = 12;
+            this.groupBoxControlButtons.TabStop = false;
+            this.groupBoxControlButtons.Text = "Control";
             // 
-            // tableLayoutPanel1
+            // tableLayoutControlButtons
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tableLayoutControlButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnSave, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnApply, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnAbout, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cbxAutostart, 0, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 19);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(114, 130);
-            this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutControlButtons.ColumnCount = 1;
+            this.tableLayoutControlButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutControlButtons.Controls.Add(this.btnSave, 0, 1);
+            this.tableLayoutControlButtons.Controls.Add(this.btnApply, 0, 0);
+            this.tableLayoutControlButtons.Controls.Add(this.btnAbout, 0, 2);
+            this.tableLayoutControlButtons.Controls.Add(this.cbxAutostart, 0, 3);
+            this.tableLayoutControlButtons.Location = new System.Drawing.Point(4, 19);
+            this.tableLayoutControlButtons.Name = "tableLayoutControlButtons";
+            this.tableLayoutControlButtons.RowCount = 4;
+            this.tableLayoutControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutControlButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutControlButtons.Size = new System.Drawing.Size(90, 157);
+            this.tableLayoutControlButtons.TabIndex = 3;
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(3, 35);
+            this.btnSave.Location = new System.Drawing.Point(3, 42);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(108, 26);
+            this.btnSave.Size = new System.Drawing.Size(84, 33);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -118,7 +120,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnApply.Location = new System.Drawing.Point(3, 3);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(108, 26);
+            this.btnApply.Size = new System.Drawing.Size(84, 33);
             this.btnApply.TabIndex = 7;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
@@ -129,9 +131,9 @@
             this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAbout.Location = new System.Drawing.Point(3, 67);
+            this.btnAbout.Location = new System.Drawing.Point(3, 81);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(108, 26);
+            this.btnAbout.Size = new System.Drawing.Size(84, 33);
             this.btnAbout.TabIndex = 9;
             this.btnAbout.Text = "About";
             this.btnAbout.UseVisualStyleBackColor = true;
@@ -143,38 +145,38 @@
             this.cbxAutostart.Appearance = System.Windows.Forms.Appearance.Button;
             this.cbxAutostart.AutoSize = true;
             this.cbxAutostart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbxAutostart.Location = new System.Drawing.Point(3, 99);
+            this.cbxAutostart.Location = new System.Drawing.Point(3, 120);
             this.cbxAutostart.Name = "cbxAutostart";
-            this.cbxAutostart.Size = new System.Drawing.Size(108, 28);
+            this.cbxAutostart.Size = new System.Drawing.Size(84, 34);
             this.cbxAutostart.TabIndex = 10;
             this.cbxAutostart.Text = "Autostart";
             this.cbxAutostart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbxAutostart.UseVisualStyleBackColor = true;
             this.cbxAutostart.Click += new System.EventHandler(this.CbxAutostart_Click);
             // 
-            // flowLayoutPanel1
+            // mainLayoutPanel
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
-            this.flowLayoutPanel1.Controls.Add(this.groupBox3);
-            this.flowLayoutPanel1.Controls.Add(this.groupBox2);
-            this.flowLayoutPanel1.Controls.Add(this.groupBox4);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(284, 271);
-            this.flowLayoutPanel1.TabIndex = 6;
+            this.mainLayoutPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mainLayoutPanel.Controls.Add(this.groupBoxInputFile);
+            this.mainLayoutPanel.Controls.Add(this.groupBoxOutputFile);
+            this.mainLayoutPanel.Controls.Add(this.groupBoxControlButtons);
+            this.mainLayoutPanel.Controls.Add(this.groupBoxSnippetParameters);
+            this.mainLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainLayoutPanel.Name = "mainLayoutPanel";
+            this.mainLayoutPanel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.mainLayoutPanel.Size = new System.Drawing.Size(284, 296);
+            this.mainLayoutPanel.TabIndex = 6;
             // 
-            // groupBox1
+            // groupBoxInputFile
             // 
-            this.groupBox1.Controls.Add(this.txtboxSourceFile);
-            this.groupBox1.Location = new System.Drawing.Point(8, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(269, 47);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Input file";
+            this.groupBoxInputFile.Controls.Add(this.txtboxSourceFile);
+            this.groupBoxInputFile.Location = new System.Drawing.Point(8, 3);
+            this.groupBoxInputFile.Name = "groupBoxInputFile";
+            this.groupBoxInputFile.Size = new System.Drawing.Size(269, 47);
+            this.groupBoxInputFile.TabIndex = 10;
+            this.groupBoxInputFile.TabStop = false;
+            this.groupBoxInputFile.Text = "Input file";
             // 
             // txtboxSourceFile
             // 
@@ -183,15 +185,15 @@
             this.txtboxSourceFile.Size = new System.Drawing.Size(257, 20);
             this.txtboxSourceFile.TabIndex = 0;
             // 
-            // groupBox3
+            // groupBoxOutputFile
             // 
-            this.groupBox3.Controls.Add(this.txtboxOutputFile);
-            this.groupBox3.Location = new System.Drawing.Point(8, 56);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(269, 47);
-            this.groupBox3.TabIndex = 11;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Output file";
+            this.groupBoxOutputFile.Controls.Add(this.txtboxOutputFile);
+            this.groupBoxOutputFile.Location = new System.Drawing.Point(8, 56);
+            this.groupBoxOutputFile.Name = "groupBoxOutputFile";
+            this.groupBoxOutputFile.Size = new System.Drawing.Size(269, 47);
+            this.groupBoxOutputFile.TabIndex = 11;
+            this.groupBoxOutputFile.TabStop = false;
+            this.groupBoxOutputFile.Text = "Output file";
             // 
             // txtboxOutputFile
             // 
@@ -200,164 +202,191 @@
             this.txtboxOutputFile.Size = new System.Drawing.Size(257, 20);
             this.txtboxOutputFile.TabIndex = 1;
             // 
-            // groupBox4
+            // groupBoxSnippetParameters
             // 
-            this.groupBox4.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox4.Location = new System.Drawing.Point(138, 109);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(139, 155);
-            this.groupBox4.TabIndex = 13;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Snipet parameters";
+            this.groupBoxSnippetParameters.Controls.Add(this.tableLayoutSnippetParameters);
+            this.groupBoxSnippetParameters.Location = new System.Drawing.Point(114, 109);
+            this.groupBoxSnippetParameters.Name = "groupBoxSnippetParameters";
+            this.groupBoxSnippetParameters.Size = new System.Drawing.Size(163, 182);
+            this.groupBoxSnippetParameters.TabIndex = 13;
+            this.groupBoxSnippetParameters.TabStop = false;
+            this.groupBoxSnippetParameters.Text = "Snippet parameters";
             // 
-            // tableLayoutPanel2
+            // tableLayoutSnippetParameters
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tableLayoutSnippetParameters.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.txtboxLeft, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtboxTop, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtboxWidth, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtboxDelay, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.txtboxHeight, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 19);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(126, 131);
-            this.tableLayoutPanel2.TabIndex = 5;
-            // 
-            // txtboxLeft
-            // 
-            this.txtboxLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtboxLeft.Location = new System.Drawing.Point(66, 3);
-            this.txtboxLeft.Name = "txtboxLeft";
-            this.txtboxLeft.Size = new System.Drawing.Size(57, 20);
-            this.txtboxLeft.TabIndex = 2;
-            this.txtboxLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtboxTop
-            // 
-            this.txtboxTop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtboxTop.Location = new System.Drawing.Point(66, 29);
-            this.txtboxTop.Name = "txtboxTop";
-            this.txtboxTop.Size = new System.Drawing.Size(57, 20);
-            this.txtboxTop.TabIndex = 3;
-            this.txtboxTop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtboxWidth
-            // 
-            this.txtboxWidth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtboxWidth.Location = new System.Drawing.Point(66, 55);
-            this.txtboxWidth.Name = "txtboxWidth";
-            this.txtboxWidth.Size = new System.Drawing.Size(57, 20);
-            this.txtboxWidth.TabIndex = 4;
-            this.txtboxWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tableLayoutSnippetParameters.ColumnCount = 2;
+            this.tableLayoutSnippetParameters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutSnippetParameters.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutSnippetParameters.Controls.Add(this.txtboxDelay, 1, 5);
+            this.tableLayoutSnippetParameters.Controls.Add(this.lblDelay, 0, 5);
+            this.tableLayoutSnippetParameters.Controls.Add(this.txtboxHeight, 1, 4);
+            this.tableLayoutSnippetParameters.Controls.Add(this.lblHeight, 0, 4);
+            this.tableLayoutSnippetParameters.Controls.Add(this.lblWidth, 0, 3);
+            this.tableLayoutSnippetParameters.Controls.Add(this.txtboxWidth, 1, 3);
+            this.tableLayoutSnippetParameters.Controls.Add(this.txtboxTop, 1, 2);
+            this.tableLayoutSnippetParameters.Controls.Add(this.lblSnippetY, 0, 2);
+            this.tableLayoutSnippetParameters.Controls.Add(this.lblSnippetX, 0, 1);
+            this.tableLayoutSnippetParameters.Controls.Add(this.txtboxLeft, 1, 1);
+            this.tableLayoutSnippetParameters.Controls.Add(this.lblReferencePoint, 0, 0);
+            this.tableLayoutSnippetParameters.Controls.Add(this.referencePointSelector, 1, 0);
+            this.tableLayoutSnippetParameters.Location = new System.Drawing.Point(7, 19);
+            this.tableLayoutSnippetParameters.Name = "tableLayoutSnippetParameters";
+            this.tableLayoutSnippetParameters.RowCount = 7;
+            this.tableLayoutSnippetParameters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutSnippetParameters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutSnippetParameters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutSnippetParameters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutSnippetParameters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutSnippetParameters.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutSnippetParameters.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutSnippetParameters.Size = new System.Drawing.Size(150, 158);
+            this.tableLayoutSnippetParameters.TabIndex = 5;
             // 
             // txtboxDelay
             // 
             this.txtboxDelay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtboxDelay.Location = new System.Drawing.Point(66, 107);
+            this.txtboxDelay.Location = new System.Drawing.Point(97, 133);
             this.txtboxDelay.Name = "txtboxDelay";
-            this.txtboxDelay.Size = new System.Drawing.Size(57, 20);
+            this.txtboxDelay.Size = new System.Drawing.Size(50, 20);
             this.txtboxDelay.TabIndex = 6;
             this.txtboxDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblDelay
+            // 
+            this.lblDelay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDelay.AutoSize = true;
+            this.lblDelay.Location = new System.Drawing.Point(3, 130);
+            this.lblDelay.Name = "lblDelay";
+            this.lblDelay.Size = new System.Drawing.Size(88, 26);
+            this.lblDelay.TabIndex = 9;
+            this.lblDelay.Text = "Delay [ms]";
+            this.lblDelay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtboxHeight
             // 
             this.txtboxHeight.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtboxHeight.Location = new System.Drawing.Point(66, 81);
+            this.txtboxHeight.Location = new System.Drawing.Point(97, 107);
             this.txtboxHeight.Name = "txtboxHeight";
-            this.txtboxHeight.Size = new System.Drawing.Size(57, 20);
+            this.txtboxHeight.Size = new System.Drawing.Size(50, 20);
             this.txtboxHeight.TabIndex = 5;
             this.txtboxHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label1
+            // lblHeight
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblHeight.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 26);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Snippet X";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHeight.AutoSize = true;
+            this.lblHeight.Location = new System.Drawing.Point(3, 104);
+            this.lblHeight.Name = "lblHeight";
+            this.lblHeight.Size = new System.Drawing.Size(88, 26);
+            this.lblHeight.TabIndex = 8;
+            this.lblHeight.Text = "Height";
+            this.lblHeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lblWidth
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblWidth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 26);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Snippet Y";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWidth.AutoSize = true;
+            this.lblWidth.Location = new System.Drawing.Point(3, 78);
+            this.lblWidth.Name = "lblWidth";
+            this.lblWidth.Size = new System.Drawing.Size(88, 26);
+            this.lblWidth.TabIndex = 7;
+            this.lblWidth.Text = "Width";
+            this.lblWidth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // txtboxWidth
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtboxWidth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 26);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Width";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtboxWidth.Location = new System.Drawing.Point(97, 81);
+            this.txtboxWidth.Name = "txtboxWidth";
+            this.txtboxWidth.Size = new System.Drawing.Size(50, 20);
+            this.txtboxWidth.TabIndex = 4;
+            this.txtboxWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label4
+            // txtboxTop
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtboxTop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 78);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 26);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Height";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtboxTop.Location = new System.Drawing.Point(97, 55);
+            this.txtboxTop.Name = "txtboxTop";
+            this.txtboxTop.Size = new System.Drawing.Size(50, 20);
+            this.txtboxTop.TabIndex = 3;
+            this.txtboxTop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label5
+            // lblSnippetY
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblSnippetY.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 27);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Delay [ms]";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSnippetY.AutoSize = true;
+            this.lblSnippetY.Location = new System.Drawing.Point(3, 52);
+            this.lblSnippetY.Name = "lblSnippetY";
+            this.lblSnippetY.Size = new System.Drawing.Size(88, 26);
+            this.lblSnippetY.TabIndex = 6;
+            this.lblSnippetY.Text = "Snippet Y";
+            this.lblSnippetY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSnippetX
+            // 
+            this.lblSnippetX.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSnippetX.AutoSize = true;
+            this.lblSnippetX.Location = new System.Drawing.Point(3, 26);
+            this.lblSnippetX.Name = "lblSnippetX";
+            this.lblSnippetX.Size = new System.Drawing.Size(88, 26);
+            this.lblSnippetX.TabIndex = 5;
+            this.lblSnippetX.Text = "Snippet X";
+            this.lblSnippetX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtboxLeft
+            // 
+            this.txtboxLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxLeft.Location = new System.Drawing.Point(97, 29);
+            this.txtboxLeft.Name = "txtboxLeft";
+            this.txtboxLeft.Size = new System.Drawing.Size(50, 20);
+            this.txtboxLeft.TabIndex = 2;
+            this.txtboxLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblReferencePoint
+            // 
+            this.lblReferencePoint.AutoSize = true;
+            this.lblReferencePoint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblReferencePoint.Location = new System.Drawing.Point(3, 0);
+            this.lblReferencePoint.Name = "lblReferencePoint";
+            this.lblReferencePoint.Size = new System.Drawing.Size(88, 26);
+            this.lblReferencePoint.TabIndex = 10;
+            this.lblReferencePoint.Text = "Reference point";
+            this.lblReferencePoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // referencePointSelector
+            // 
+            this.referencePointSelector.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.referencePointSelector.Location = new System.Drawing.Point(97, 3);
+            this.referencePointSelector.MaximumSize = new System.Drawing.Size(50, 20);
+            this.referencePointSelector.MinimumSize = new System.Drawing.Size(50, 20);
+            this.referencePointSelector.Name = "referencePointSelector";
+            this.referencePointSelector.ReferencePointLocationX = System.Windows.Forms.AnchorStyles.Left;
+            this.referencePointSelector.ReferencePointLocationY = System.Windows.Forms.AnchorStyles.Top;
+            this.referencePointSelector.Size = new System.Drawing.Size(50, 20);
+            this.referencePointSelector.TabIndex = 11;
             // 
             // notifyIcon
             // 
@@ -397,41 +426,41 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 271);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(284, 296);
+            this.Controls.Add(this.mainLayoutPanel);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(300, 310);
-            this.MinimumSize = new System.Drawing.Size(300, 310);
+            this.MaximumSize = new System.Drawing.Size(300, 335);
+            this.MinimumSize = new System.Drawing.Size(300, 335);
             this.Name = "MainWindow";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "BGSnippet";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.Resize += new System.EventHandler(this.MainWindow_Resize);
-            this.groupBox2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.groupBoxControlButtons.ResumeLayout(false);
+            this.tableLayoutControlButtons.ResumeLayout(false);
+            this.tableLayoutControlButtons.PerformLayout();
+            this.mainLayoutPanel.ResumeLayout(false);
+            this.groupBoxInputFile.ResumeLayout(false);
+            this.groupBoxInputFile.PerformLayout();
+            this.groupBoxOutputFile.ResumeLayout(false);
+            this.groupBoxOutputFile.PerformLayout();
+            this.groupBoxSnippetParameters.ResumeLayout(false);
+            this.tableLayoutSnippetParameters.ResumeLayout(false);
+            this.tableLayoutSnippetParameters.PerformLayout();
             this.systemTrayMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBoxControlButtons;
+        private System.Windows.Forms.FlowLayoutPanel mainLayoutPanel;
+        private System.Windows.Forms.GroupBox groupBoxInputFile;
+        private System.Windows.Forms.GroupBox groupBoxOutputFile;
+        private System.Windows.Forms.GroupBox groupBoxSnippetParameters;
         private System.Windows.Forms.TextBox txtboxSourceFile;
         private System.Windows.Forms.TextBox txtboxOutputFile;
         private System.Windows.Forms.TextBox txtboxDelay;
@@ -439,21 +468,23 @@
         private System.Windows.Forms.TextBox txtboxWidth;
         private System.Windows.Forms.TextBox txtboxTop;
         private System.Windows.Forms.TextBox txtboxLeft;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutControlButtons;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnAbout;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutSnippetParameters;
         private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblSnippetX;
+        private System.Windows.Forms.Label lblSnippetY;
+        private System.Windows.Forms.Label lblWidth;
+        private System.Windows.Forms.Label lblHeight;
+        private System.Windows.Forms.Label lblDelay;
         private System.Windows.Forms.CheckBox cbxAutostart;
         private System.Windows.Forms.ContextMenuStrip systemTrayMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem pauseOrResume_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem exit_MenuItem;
+        private System.Windows.Forms.Label lblReferencePoint;
+        private ReferencePointSelector referencePointSelector;
     }
 }
 
