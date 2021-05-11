@@ -6,6 +6,7 @@ Solves the problem described [here](https://forums.aida64.com/topic/1946-sensorp
 
 **Screens:**
 
+![Demo](ReadmeResources/BGSnippet.gif)
 ![Screenshot 1](ReadmeResources/scr1.png)
 ![Screenshot 2](ReadmeResources/scr2.png)
 ![Screenshot 3](ReadmeResources/scr3.png)
