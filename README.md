@@ -4,9 +4,9 @@
 **Description:** Workaround for AIDA64's lack of transparent sensor panel background.
 Solves the problem described [here](https://forums.aida64.com/topic/1946-sensorpanel-transparent-background/?tab=comments#comment-18738), by getting triggered upon the change of Windows desktop background image, and extracting appropriate piece of current desktop wallpaper to a user specified file. 
 
-**Demo:**
+**Setup and demo video:**
 
-![Demo](ReadmeResources/BGSnippet.gif)
+[![Demo](https://img.youtube.com/vi/2X6_RZ3GTjY/0.jpg)](https://youtu.be/2X6_RZ3GTjY)
 
 **Screens:**
 
